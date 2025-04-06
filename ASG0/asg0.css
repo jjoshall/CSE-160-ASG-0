@@ -1,0 +1,13 @@
+body {
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input, label {
+    font-size: 1em;
+}
