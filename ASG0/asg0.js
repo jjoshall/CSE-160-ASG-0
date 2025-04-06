@@ -46,6 +46,7 @@ function drawVector() {
     let y1 = parseFloat(document.getElementById("y1").value);
     let x2 = parseFloat(document.getElementById("x2").value);
     let y2 = parseFloat(document.getElementById("y2").value);
+    let op = document.getElementById("operation-select").value; // Get the selected operation
 
     if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2)) {
         alert("Invalid input for x or y.");
@@ -56,4 +57,27 @@ function drawVector() {
     let v2 = new Vector3([x2, y2, 0]); // Create a new vector with x2 and y2 components
     handleDrawEvent(v1, "red");
     handleDrawEvent(v2, "blue"); // Draw the second vector in blue
+
+    let scalar = 1;
+
+    if (op === "Add") {
+        let v3 = new Vector3([x1, y1, 0]).add(v2); // Add the two vectors
+        handleDrawEvent(v3, "green"); // Draw the result in green
+    }
+    else if (op === "Sub") {
+        let v3 = new Vector3([x1, y1, 0]).sub(v2); // Subtract the second vector from the first
+        handleDrawEvent(v3, "green"); // Draw the result in green
+    }
+    else if (op === "Mul") {
+        let v3 = new Vector3([x1, y1, 0]).mul(scalar); // Multiply the first vector by the scalar
+        let v4 = new Vector3([x2, y2, 0]).mul(scalar); // Multiply the second vector by the scalar
+        handleDrawEvent(v3, "green"); // Draw the result in green
+        handleDrawEvent(v4, "green"); // Draw the result in green
+    }
+    else if (op === "Div") {
+        let v3 = new Vector3([x1, y1, 0]).div(scalar); // Divide the first vector by the scalar
+        let v4 = new Vector3([x2, y2, 0]).div(scalar); // Divide the second vector by the scalar
+        handleDrawEvent(v3, "green"); // Draw the result in green
+        handleDrawEvent(v4, "green"); // Draw the result in green
+    }
 }
