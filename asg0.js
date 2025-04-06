@@ -33,7 +33,6 @@ function handleDrawEvent() {
 
     let cx = canvas.width / 2;
     let cy = canvas.height / 2;
-    console.log(cx, cy);
 
     ctx.beginPath(); // Start a new path
     ctx.moveTo(cx, cy); // Move to the center of the canvas
