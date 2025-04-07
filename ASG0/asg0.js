@@ -100,6 +100,10 @@ function drawVector() {
         let angle = angleBetween(v1, v2); // Calculate the angle between the two vectors
         console.log("Angle between v1 and v2: " + angle + " degrees"); // Display the angle
     }
+    else if (op === "Area") {
+        let area = areaTriangle(v1, v2); // Calculate the area of the triangle formed by the two vectors
+        console.log("Area of triangle: " + area); // Display the area
+    }
 }
 
 function angleBetween(v1, v2) {
@@ -114,4 +118,10 @@ function angleBetween(v1, v2) {
     cosTheta = Math.max(-1, Math.min(1, cosTheta)); // Clamp the value to the range [-1, 1]
     let angleDeg = Math.acos(cosTheta) * (180 / Math.PI); // Calculate the angle in degrees
     return angleDeg; // Return the angle in degrees
+}
+
+function areaTriangle(v1, v2) {
+    let crossVec = Vector3.cross(v1, v2); // Calculate the cross product of the two vectors
+    let areaTriangle = crossVec.magnitude() / 2; // Calculate the area of the triangle
+    return areaTriangle; // Return the area of the triangle
 }
