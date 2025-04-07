@@ -136,7 +136,10 @@ class Vector3 {
       */
     magnitude() {
         // Insert your code here.
-        let m = 0; // Modify this line to calculate this vector's magnitude.
+        let x = this.elements[0];
+        let y = this.elements[1];
+        let z = this.elements[2];
+        let m = Math.sqrt((x * x) + (y * y) + (z * z)); // Modify this line to calculate this vector's magnitude.
 
         // Don't delete the return statement.
         return m;
@@ -149,6 +152,15 @@ class Vector3 {
     normalize() {
         // Insert your code here.
         // This function should change this vector (this.elements) and not create a new vector.
+        let mag = this.magnitude();
+        if (mag !== 0) {
+            this.elements[0] /= mag;
+            this.elements[1] /= mag;
+            this.elements[2] /= mag;
+        }
+        else {
+          console.warn("Cannot normalize a zero vector.");
+        }
 
         // Don't delete the return statement.
         return this;

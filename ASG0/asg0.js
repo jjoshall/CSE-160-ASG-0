@@ -85,4 +85,15 @@ function drawVector() {
         handleDrawEvent(v3, "green"); // Draw the result in green
         handleDrawEvent(v4, "green"); // Draw the result in green
     }
+    else if (op === "Magnitude") {
+        let mag1 = new Vector3([x1, y1, 0]).magnitude(); // Calculate the magnitude of the first vector
+        let mag2 = new Vector3([x2, y2, 0]).magnitude(); // Calculate the magnitude of the second vector
+        console.log("Magnitude v1: " + mag1 + "\nMagnitude v2: " + mag2); // Display the magnitudes
+    }
+    else if (op === "Normalize") {
+        let v3 = new Vector3([x1, y1, 0]).normalize(); // Normalize the first vector
+        let v4 = new Vector3([x2, y2, 0]).normalize(); // Normalize the second vector
+        handleDrawEvent(v3, "green"); // Draw the result in green
+        handleDrawEvent(v4, "green"); // Draw the result in green
+    }
 }
