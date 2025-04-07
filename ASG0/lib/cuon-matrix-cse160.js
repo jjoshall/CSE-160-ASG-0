@@ -42,6 +42,7 @@ class Vector3 {
     /**
       * Add other to this vector.
       * @return this
+      * Used ChatGPT to help with the syntax of this function
       */
     add(other) {
         // Insert your code here.
@@ -57,6 +58,7 @@ class Vector3 {
     /**
       * Subtract other from this vector.
       * @return this
+      * Used ChatGPT to help with the syntax of this function
       */
     sub(other) {
         // Insert your code here.
@@ -73,6 +75,7 @@ class Vector3 {
     /**
       * Divide this vector by a scalar.
       * @return this
+      * Used ChatGPT to help with the syntax of this function
       */
     div(scalar) {
         // Insert your code here.
@@ -93,6 +96,7 @@ class Vector3 {
     /**
       * Multiply this vector by a scalar.
       * @return this
+      * Used ChatGPT to help with the syntax of this function
       */
     mul(scalar) {
         // Insert your code here.
@@ -108,6 +112,7 @@ class Vector3 {
     /**
       * Calcualte the dop product between this vector and other.
       * @return scalar
+      * Used ChatGPT to help with this function
       */
     static dot(other1, other2) {
         // Insert your code here.
@@ -122,6 +127,7 @@ class Vector3 {
     /**
       * Calcualte the cross product between this vector and other.
       * @return new vector
+      * Used ChatGPT to help with this function
       */
     static cross(other1, other2) {
         // Insert your code here.
@@ -142,6 +148,7 @@ class Vector3 {
     /**
       * Calculate the magnitude (or length) of this vector.
       * @return scalar
+      * Used ChatGPT to help with this function
       */
     magnitude() {
         // Insert your code here.
@@ -157,6 +164,7 @@ class Vector3 {
     /**
       * Normalize this vector.
       * @return this
+      * Used ChatGPT to help with this function
       */
     normalize() {
         // Insert your code here.
