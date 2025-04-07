@@ -58,7 +58,12 @@ function drawVector() {
     handleDrawEvent(v1, "red");
     handleDrawEvent(v2, "blue"); // Draw the second vector in blue
 
-    let scalar = 1;
+    let scalarInput = document.getElementById("Scalar").value; // Get the scalar value
+    let scalar = parseFloat(scalarInput); // Parse the scalar value
+    if ((op === "Mul" || op === "Div") && isNaN(scalar)) {
+        alert("Invalid input for scalar.");
+        return;
+    }
 
     if (op === "Add") {
         let v3 = new Vector3([x1, y1, 0]).add(v2); // Add the two vectors
