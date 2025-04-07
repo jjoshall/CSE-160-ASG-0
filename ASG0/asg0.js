@@ -96,4 +96,22 @@ function drawVector() {
         handleDrawEvent(v3, "green"); // Draw the result in green
         handleDrawEvent(v4, "green"); // Draw the result in green
     }
+    else if (op === "AngleBetween") {
+        let angle = angleBetween(v1, v2); // Calculate the angle between the two vectors
+        console.log("Angle between v1 and v2: " + angle + " degrees"); // Display the angle
+    }
+}
+
+function angleBetween(v1, v2) {
+    let dotProduct = Vector3.dot(v1, v2); // Calculate the dot product of the two vectors
+    let mag1 = v1.magnitude(); // Calculate the magnitude of the first vector
+    let mag2 = v2.magnitude(); // Calculate the magnitude of the second vector
+    console.log(dotProduct); // Log the magnitudes of the vectors
+    if (mag1 === 0 || mag2 === 0) {
+        return 0; // Return 0 if either vector has zero magnitude
+    }
+    let cosTheta = dotProduct / (mag1 * mag2); // Calculate the cosine of the angle
+    cosTheta = Math.max(-1, Math.min(1, cosTheta)); // Clamp the value to the range [-1, 1]
+    let angleDeg = Math.acos(cosTheta) * (180 / Math.PI); // Calculate the angle in degrees
+    return angleDeg; // Return the angle in degrees
 }
